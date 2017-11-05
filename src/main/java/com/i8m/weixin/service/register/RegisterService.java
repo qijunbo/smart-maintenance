@@ -3,7 +3,7 @@ package com.i8m.weixin.service.register;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.i8m.configure.PropertiesConfigure;
+import com.i8m.configure.WexinConfig;
 import com.i8m.repository.URL;
 import com.i8m.repository.User;
 import com.i8m.repository.UserRepository;
@@ -20,7 +20,7 @@ public class RegisterService {
 	private MessageService service;
 
 	@Autowired
-	private PropertiesConfigure configure;
+	private WexinConfig configure;
 
 	@Autowired
 	private MessageFactory factory;

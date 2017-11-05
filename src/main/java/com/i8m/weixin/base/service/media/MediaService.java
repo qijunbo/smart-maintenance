@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.i8m.common.http.HttpPostClient;
-import com.i8m.configure.PropertiesConfigure;
+import com.i8m.configure.WexinConfig;
 import com.i8m.weixin.service.token.AccessTokenService;
 
 /**
@@ -40,7 +40,7 @@ public class MediaService {
 	private HttpPostClient httpClient;
 
 	@Autowired
-	private PropertiesConfigure configure;
+	private WexinConfig configure;
 
 	@Autowired
 	private MediaResponseHandler handler;

@@ -12,7 +12,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
 import com.i8m.common.http.HttpGetClient;
-import com.i8m.configure.PropertiesConfigure;
+import com.i8m.configure.WexinConfig;
 
 @Configuration
 @EnableAsync
@@ -24,7 +24,7 @@ public class AccessTokenRefreshTask {
 	private HttpGetClient client;
 
 	@Autowired
-	private PropertiesConfigure configure;
+	private WexinConfig configure;
 
 	@Autowired
 	private AccessTokenHandler handler;
@@ -36,7 +36,7 @@ public class AccessTokenRefreshTask {
 	public void refreshAccessToken() {
 
 		try {
-			String uri = String.format(configure.getAccessTokenURL(), configure.getCorpID(), configure.getSecret());
+			String uri = String.format(configure.getService().getAccessToken(), configure.getCorpID(), configure.getSecret());
 			log.debug("Refresh access tocken on " + formatter.format(new Date()));
 			log.debug("AccessToken URL: " + uri);
 
